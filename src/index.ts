@@ -1,9 +1,12 @@
 import type { ModuleNode, Plugin, ResolvedConfig, ViteDevServer } from 'vite'
-import { isMatch } from 'micromatch'
+
+import pkg from 'micromatch';
+const { isMatch } = pkg;
+
 import type { ParsedImportGlob, PluginOptions } from '../types'
 import { transform } from './transform'
 
-export default function(options: PluginOptions = {}): Plugin {
+export default function (options: PluginOptions = {}): Plugin {
   let server: ViteDevServer | undefined
   let config: ResolvedConfig
   const map = new Map<string, string[][]>()

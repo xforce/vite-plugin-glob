@@ -1,5 +1,7 @@
-import path from 'path'
-import { scan } from 'micromatch'
+import path from 'path';
+
+import pkg from 'micromatch';
+const { scan } = pkg;
 
 const cssLangs = '\\.(css|less|sass|scss|styl|stylus|pcss|postcss)($|\\?)'
 const cssLangRE = new RegExp(cssLangs)
